@@ -1,16 +1,14 @@
 // Firebase config
 const firebaseConfig = {
-	apiKey: "AIzaSyAcPhlsGZepoakFV6mEH4xEZ0iWqZfxiCw",
-	authDomain: "prakash-f9bf4.firebaseapp.com",
-	databaseURL:
-		"https://prakash-f9bf4-default-rtdb.asia-southeast1.firebasedatabase.app",
-	projectId: "prakash-f9bf4",
-	storageBucket: "prakash-f9bf4.appspot.com",
-	messagingSenderId: "3154372934",
-	appId: "1:3154372934:web:8e26c0166595e49c619d47",
-	measurementId: "G-WS3CMWSQDH",
+	apiKey: process.env.FIREBASE_API_KEY,
+	authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+	databaseURL: process.env.FIREBASE_DATABASE_URL,
+	projectId: process.env.FIREBASE_PROJECT_ID,
+	storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+	appId: process.env.FIREBASE_APP_ID,
+	measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
-
 
 // This is a comment
 firebase.initializeApp(firebaseConfig);
@@ -598,8 +596,8 @@ async function listUsersScreen() {
 }
 
 // Replace with your Cloudinary cloud name and unsigned upload preset
-const cloudName = "dpys2kkvc";
-const uploadPreset = "prakash";
+const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
+const uploadPreset = process.env.CLOUDINARY_UPLOAD_PRESET;
 
 function uploadImage(file) {
 	const url = `https://api.cloudinary.com/v1_1/${cloudName}/upload`;
